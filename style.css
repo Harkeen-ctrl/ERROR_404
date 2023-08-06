@@ -1,0 +1,150 @@
+body{
+    margin: 0 5%;
+    font-family: sans-serif;
+    background-color: #e0a434;
+    color: black;
+    box-sizing: border-box;
+}
+a {
+     text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+}
+.nav-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.nav-list{
+    display: flex;
+}
+
+.nav-menu ul li a{
+    margin: 7px;
+    color: black;
+}
+.nav-menu ul li a:hover{
+    color: white;
+}
+.nav-logo{
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.container{
+    margin: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1{
+    font-size: 60px;
+    margin: 0px;
+    padding: 0px;
+    font-family: cursive;
+}
+
+h4{
+    font-size: smaller;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.btn{
+    background-color: black;
+    color: white;
+    height: 30px;
+    width: 80px;
+    border-radius: 15px;
+}
+.btn:hover{
+    background-color: white;
+    color: black;
+    border:0px
+}
+.footer{
+    text-align: center;
+}
+.toggle-btn .img{
+    height: 30px;
+    position: absolute;
+    top: 0.2rem;
+    right: 1rem;
+    flex-direction: column;
+    display: none;
+}
+.hamburger{
+    cursor: pointer;
+}
+.bar{
+    display: none;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all o.3s ease-in-out;
+    transition: all o.3s ease-in-out;
+    background-color: black;
+}
+
+
+@media(max-width: 789px){
+    .container{
+        flex-direction: column;
+        text-align: center;
+        row-gap: 2.5rem;
+    }
+    .container.left{
+        margin-top: 10px;
+    }
+    .hamburger{
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-list{
+        position: fixed;
+        left: -120%;
+        top: 20px;
+        gap: 0;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        transition: 0.3s;
+        background-color: white ;
+        opacity: 15;
+        border-radius: 50px;
+
+    }
+    .nav-link{
+        border: solid black;
+        border-radius: 15px;
+        padding: 5px;
+        width: 30px;
+    }
+    .nav-link:hover{
+        background-color: black;
+        color: white;
+    }
+
+    .nav-item{
+        margin:16px 0;
+    }
+    .nav-list.active{
+        left: -20px;
+    }
+    .bar{
+        display: block;
+    }
+
+}
